@@ -1897,7 +1897,7 @@ function refresh() {
 function optionsLoad() {
 	if (!window.location.hash) return;
 
-	options = deserialize(window.location.hash.slice(1));
+	options = mergeOptions(defaultOptions, deserialize(window.location.hash.slice(1)));
 
 	function validBoolean(q) {
 		return q == 1;
@@ -2021,6 +2021,34 @@ function optionsLoad() {
     updateSeasonNames();
 }
 
+function mergeOptions(defaults, overrides) {
+	if (overrides === null || overrides === undefined) {
+		return JSON.parse(JSON.stringify(defaults));
+	}
+
+	if (Array.isArray(defaults)) {
+		return Array.isArray(overrides) ? overrides.slice() : defaults.slice();
+	}
+
+	if (typeof defaults !== 'object') {
+		return overrides;
+	}
+
+	var merged = {};
+	Object.keys(defaults).forEach(function(key) {
+		var hasOverride = Object.prototype.hasOwnProperty.call(overrides, key);
+		merged[key] = hasOverride ? mergeOptions(defaults[key], overrides[key]) : defaults[key];
+	});
+
+	Object.keys(overrides).forEach(function(key) {
+		if (!Object.prototype.hasOwnProperty.call(merged, key)) {
+			merged[key] = overrides[key];
+		}
+	});
+
+	return merged;
+}
+
 function deserialize(str) {
     try {
         var json = `(${str})`
@@ -2041,7 +2069,12 @@ function deserialize(str) {
 
 function serialize(obj) {
 
+	if (typeof obj !== 'object' || obj === null) {
+		return '';
+	}
+
 	return Object.keys(obj)
+	.filter((key) => key !== 'barColors')
 		.reduce((acc, key) => {
 			return /^(?:true|false|\d+)$/i.test('' + obj[key])
 				? `${acc}-${key}_${obj[key]}`

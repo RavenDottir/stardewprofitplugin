@@ -1,5 +1,5 @@
 /* =========================================
-   STARDEW CALCULATOR — FULLY INTEGRATED
+   STARDEW CALCULATOR - FULLY INTEGRATED
 ========================================= */
 
 .sdv-calculator {
@@ -7,11 +7,13 @@
   font-family: 'Stardew Valley';
   color: var(--text_color);
   text-shadow: var(--text_shadow) -2px 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .sdv-tooltip {
   position: absolute;
-  z-index: 10;
   padding: 10px 14px;
   max-width: 280px;
   font-family: 'Stardew Valley';
@@ -27,39 +29,89 @@
   border-image-slice: 24 22;
   border-image-repeat: round;
   border-radius: 20px;
-
   image-rendering: pixelated;
   z-index: 9999;
-
   transition: opacity 80ms linear;
   box-shadow:
     0 6px 0 rgba(120, 72, 28, 0.85),
     0 10px 18px rgba(0, 0, 0, 0.35);
 }
 
-
 /* GRAPH PANEL */
 
 .sdv-calculator .graph {
   background: transparent;
   border-radius: 5px;
-  margin-bottom: 36px;
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow-x: auto;
+  padding-top: 6px;
 }
 
 .sdv-graph-title {
-  margin: 0 0 8px 48px;
+  margin: 0 0 12px 64px;
   font-size: 48px;
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .sdv-calculator svg {
-    background: var(--card-bg);
+  background: var(--card-bg);
+  overflow: visible;
+  min-height: 520px;
+}
+.sdv-calculator .axis text {
+  font-size: 24px;
+  text-shadow: none;
 }
 
-/* SECTION WRAPPER */
+.sdv-calculator .axis path,
+.sdv-calculator .axis line {
+  stroke: #2b1a0b;
+  shape-rendering: crispEdges;
+}
+
+.sdv-calculator .options {
+  background: var(--gradient-bg);
+  border-image: url("assets/border.png") 24 22 round;
+  border-width: 20px;
+  border-style: solid;
+  border-radius: 20px;
+  padding: 18px 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px 22px;
+}
+
+.sdv-calculator .options table {
+  width: 100%;
+}
+
+.sdv-calculator .options td {
+  font-size: 24px;
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.sdv-calculator .options select,
+.sdv-calculator .options input[type="number"],
+.sdv-calculator .options button {
+  width: 100%;
+  font-family: 'Stardew Valley';
+  font-size: 22px;
+  background: linear-gradient(180deg, #ffd693, #f1b96f);
+  border: 4px solid #b86f32;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.sdv-calculator .options input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 6px;
+}
+
+/* LEGACY/OTHER SECTIONS */
 
 .sdv-section {
   background: var(--gradient-bg);
@@ -74,16 +126,12 @@
     0 12px 24px rgba(0,0,0,0.25);
 }
 
-/* SECTION TITLES */
-
 .sdv-section h3 {
   font-family: 'Stardew Valley All Caps';
   font-size: 28px;
   margin-bottom: 18px;
   letter-spacing: 1px;
 }
-
-/* GRID LAYOUT */
 
 .sdv-grid {
   display: grid;
@@ -92,13 +140,9 @@
   align-items: center;
 }
 
-/* LABELS */
-
 .sdv-grid label {
   font-size: 24px;
 }
-
-/* INPUTS */
 
 .sdv-grid select,
 .sdv-grid input[type="number"] {
@@ -118,12 +162,9 @@
   transform: scale(1.3);
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 900px) {
 
   .sdv-grid {
     grid-template-columns: 1fr;
   }
-
 }
