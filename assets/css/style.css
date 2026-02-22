@@ -43,13 +43,6 @@
   width: 100%;
   table-layout: fixed;
 }
-.sdv-calculator .options td:first-child {
-  width: 45%;
-}
-
-.sdv-calculator .options td:last-child {
-  width: 55%;
-}
 
 .sdv-calculator .graph {
   background: transparent;
@@ -96,14 +89,14 @@
   gap: 14px 22px;
 }
 
-.sdv-calculator .options table {
-  width: 100%;
+.sdv-calculator .options input[type="checkbox"] {
+  vertical-align: middle;
 }
 
-.sdv-calculator .options td {
-  font-size: 24px;
-  padding: 4px 6px;
-  vertical-align: top;
+.sdv-calculator .options td input[type="checkbox"] + label {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 14px 0 6px;
 }
 
 .sdv-calculator .options select,
@@ -306,15 +299,6 @@
   user-select: none;
 }
 
-.sdv-calculator td label.sdv-checkbox {
-  display: flex;
-  align-items: center;
-}
-
-.sdv-calculator td label.sdv-checkbox + label.sdv-checkbox {
-  margin-top: 8px;
-}
-
 /* Box */
 .sdv-checkbox-box {
   width: 22px;
@@ -366,10 +350,6 @@
   align-items: center;
   width: 100%;
 }
-.sdv-calculator .options td {
-  padding: 10px 8px;
-  vertical-align: middle;
-}
 /* Consistent spacing between stacked checkboxes */
 .sdv-calculator .options td label.sdv-checkbox + label.sdv-checkbox {
   margin-top: 8px;
@@ -383,16 +363,8 @@
   font-size: 18px;
   opacity: 0.85;
 }
-/* Left column labels */
-.sdv-calculator .options td:first-child {
-  font-size: 24px;
-  color: #4a2612;
-  padding-right: 16px;
-}
 
 .sdv-checkbox .note {
-  font-size: 18px;
-  opacity: 0.8;
   margin-left: 6px;
 }
 

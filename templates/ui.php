@@ -63,15 +63,15 @@
                         </tr>
                         <tr id="tr_check_sellRaw">
                             <td>No Artisan Good:</td>
-                            <td><input type="checkbox" id="check_sellRaw" onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><input type="checkbox" id="check_sellRaw" onChange="refresh()"/> <label for="check_sellRaw">Sell Raw</label></td>
                         </tr>
                         <tr id="tr_check_sellExcess">
                             <td>Excess:</td>
-                            <td><input type="checkbox" id="check_sellExcess" onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><input type="checkbox" id="check_sellExcess" onChange="refresh()"/> <label for="check_sellExcess">Sell Raw</label></td>
                         </tr>
                         <tr id="tr_check_byHarvest">
                             <td>By Harvest:</td>
-                            <td><input type="checkbox" id="check_byHarvest" onChange="refresh()"/><br /></td>
+                            <td><input type="checkbox" id="check_byHarvest" onChange="refresh()" /></td>
                         </tr>
                         <tr id="tr_select_aging">
                             <td>Aging:</td>
@@ -112,8 +112,8 @@
 			<tr>
 				<td>Seed Sources:</td>
 				<td>
-					<input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /> <label for="check_seedsPierre">Pierre</label><br />
-					<input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /> <label for="check_seedsJoja">Joja</label><br />
+					<input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /> <label for="check_seedsPierre">Pierre</label>
+					<input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /> <label for="check_seedsJoja">Joja</label>
 					<input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /> <label for="check_seedsSpecial">Special</label>
 				</td>
 			</tr>
@@ -174,7 +174,7 @@
                     <table cellspacing="2" class="subt">
                         <tr>
                             <td>Level 5 Skill:</td>
-                            <td><input type="checkbox" id="check_skillsTill" onChange="refresh()" /> Tiller<br /></td>
+                            <td><input type="checkbox" id="check_skillsTill" onChange="refresh()" /> <label for="check_skillsTill">Tiller</label></td>
                         </tr>
                         <tr>
                             <td>Level 10 Skill:</td>
@@ -207,11 +207,11 @@
                     <table cellspacing="2" class="subt">
                         <tr>
                             <td>Level 5 skill:</td>
-                            <td><input type="checkbox" id="check_skillsGatherer" onChange="refresh()" /> Gatherer<br /></td>
+                            <td><input type="checkbox" id="check_skillsGatherer" onChange="refresh()" /> <label for="check_skillsGatherer">Gatherer</label></td>
                         </tr>
                         <tr>
                             <td>Level 10 skill:</td>
-                            <td><input type="checkbox" id="check_skillsBotanist" onChange="refresh()" /> Botanist<br /></td>
+                            <td><input type="checkbox" id="check_skillsBotanist" onChange="refresh()" /> <label for="check_skillsBotanist">Botanist</label></td>
                         </tr>
                     </table>
                 </td>
