@@ -1,1 +1,1 @@
-# stardewprofitplugin
+# Stardew Valley Profits Wordpress Plugin
