@@ -8,9 +8,11 @@ var width = svgWidth - 48;
 var height = (svgHeight - 56) / 2;
 var barPadding = 4;
 var paddingLeft = 8;
-var barWidth = width / seasons[options.season].crops.length - barPadding;
+var barTargetWidth = 30;
+var barWidth = barTargetWidth;
 var miniBar = 8;
-var barOffsetX = 29;
+var axisOffsetX = 48;
+var barOffsetX = axisOffsetX + 8;
 var barOffsetY = 40;
 var graphDescription = "Profit";
 
@@ -779,10 +781,20 @@ function sortCrops() {
  * Updates the X D3 scale.
  * @return The new scale.
  */
+function updateGraphWidth() {
+	var minGraphWidth = svgMinWidth - barOffsetX - barPadding * 2 - paddingLeft;
+	var targetGraphWidth = (barTargetWidth + barPadding) * cropList.length;
+	width = Math.max(minGraphWidth, targetGraphWidth);
+}
+
 function updateScaleX() {
 	return d3.scale.ordinal()
-		.domain(d3.range(seasons[4].crops.length))
+		.domain(d3.range(cropList.length))
 		.rangeRoundBands([0, width]);
+}
+
+function updateBarWidth(xScale) {
+	barWidth = Math.max(1, xScale.rangeBand() - barPadding);
 }
 
 /*
@@ -866,15 +878,15 @@ function updateGraphTitle() {
  */
 function renderGraph() {
 
+	updateGraphWidth();
 	var x = updateScaleX();
+		updateBarWidth(x);
 	var y = updateScaleY();
 	var ax = updateScaleAxis();
 
-    var width = barOffsetX + barPadding * 2 + (barWidth + barPadding) * cropList.length + paddingLeft;
-    if (width < svgMinWidth)
-        width = svgMinWidth;
-	svg.attr("width", width);
-	d3.select(".graph").attr("width", width);
+   var svgWidth = barOffsetX + barPadding * 2 + width + paddingLeft;
+	svg.attr("width", svgWidth);
+	d3.select(".graph").attr("width", svgWidth);
 
 	var yAxis = d3.svg.axis()
 		.scale(ax)
@@ -1469,7 +1481,9 @@ function renderGraph() {
  * Updates the already rendered graph, showing animations.
  */
 function updateGraph() {
+		updateGraphWidth();
 	var x = updateScaleX();
+		updateBarWidth(x);
 	var y = updateScaleY();
 	var ax = updateScaleAxis();
 
