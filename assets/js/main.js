@@ -2079,14 +2079,7 @@ function mergeOptions(defaults, overrides) {
 
 function deserialize(str) {
     try {
-        var decoded = decodeURIComponent(str);
-        var sanitized = '';
-
-        for (var i = 0; i < decoded.length; i++) {
-            if (decoded.charCodeAt(i) !== 0) {
-                sanitized += decoded.charAt(i);
-            }
-        }
+        var sanitized = decodeURIComponent(str).replace(/[\u0000]/g, '');
 
         var json = `(${sanitized})`
             .replace(/_/g, ' ')
