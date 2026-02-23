@@ -23,7 +23,7 @@
 
             <tr id="cross_season_row">
                 <td>Cross-Season:</td>
-                <td><input type="checkbox" id="cross_season" class="sdv-checkbox" onChange="refresh()" /></td>
+                <td><label for="cross_season" class="sdv-checkbox-row"><input type="checkbox" id="cross_season" onChange="refresh()" /><span>Enable</span></label></td>
             </tr>
 
 			<tr id="current_day_row">
@@ -64,15 +64,15 @@
                         </tr>
                         <tr id="tr_check_sellRaw">
                             <td>No Artisan Good:</td>
-                            <td><input type="checkbox" id="check_sellRaw" class="sdv-checkbox"  onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><label for="check_sellRaw" class="sdv-checkbox-row"><input type="checkbox" id="check_sellRaw" onChange="refresh()"/><span>Sell Raw</span></label></td>
                         </tr>
                         <tr id="tr_check_sellExcess">
                             <td>Excess:</td>
-                            <td><input type="checkbox" id="check_sellExcess" class="sdv-checkbox" onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><label for="check_sellExcess" class="sdv-checkbox-row"><input type="checkbox" id="check_sellExcess" onChange="refresh()"/><span>Sell Raw</span></label></td>
                         </tr>
                         <tr id="tr_check_byHarvest">
                             <td>By Harvest:</td>
-                            <td><input type="checkbox" id="check_byHarvest" class="sdv-checkbox" onChange="refresh()"/><br /></td>
+                            <td><label for="check_byHarvest" class="sdv-checkbox-row"><input type="checkbox" id="check_byHarvest" onChange="refresh()"/><span>Enable</span></label></td>
                         </tr>
                         <tr id="tr_select_aging">
                             <td>Aging:</td>
@@ -113,25 +113,25 @@
 			<tr>
 				<td>Seed Sources:</td>
 				<td>
-					<input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /> <label for="check_seedsPierre" class="sdv-checkbox">Pierre</label><br />
-					<input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /> <label for="check_seedsJoja" class="sdv-checkbox" >Joja</label><br />
-					<input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /> <label for="check_seedsSpecial" class="sdv-checkbox" >Special</label>
+					<label for="check_seedsPierre" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /><span>Pierre</span></label>
+					<label for="check_seedsJoja" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /><span>Joja</span></label>
+					<label for="check_seedsSpecial" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /><span>Special</span></label>
 				</td>
 			</tr>
 
 			<tr>
 				<td>Pay For Seeds:</td>
-				<td><input type="checkbox" id="check_buySeed" onChange="refresh()" /></td>
+				<td><label for="check_buySeed" class="sdv-checkbox-row"><input type="checkbox" id="check_buySeed" onChange="refresh()" /><span>Enable</span></label></td>
 			</tr>
 
             <tr>
                 <td>Process & Replant:</td>
-                <td><input type="checkbox" id="check_replant" onChange="refresh()" /> <label for="check_replant">(Forces even crops)</label></td>
+                <td><label for="check_replant" class="sdv-checkbox-row"><input type="checkbox" id="check_replant" onChange="refresh()" /><span>(Forces even crops)</span></label></td>
             </tr>
 
             <tr>
                 <td>Use Next Year:</td>
-                <td><input type="checkbox" id="check_nextyear" onChange="refresh()" /></td>
+                <td><label for="check_nextyear" class="sdv-checkbox-row"><input type="checkbox" id="check_nextyear" onChange="refresh()" /><span>Enable</span></label></td>
             </tr>
 
 			<tr>
@@ -151,7 +151,7 @@
 
 			<tr>
 				<td>Pay For Fertilizer:</td>
-				<td><input type="checkbox" id="check_buyFert" onChange="refresh()" /></td>
+				<td><label for="check_buyFert" class="sdv-checkbox-row"><input type="checkbox" id="check_buyFert" onChange="refresh()" /><span>Enable</span></label></td>
 			</tr>
 			<tr id = "deluxe_speed_input">
 				<td>Speed-Gro Source:</td>
@@ -159,6 +159,7 @@
 					<select id="speed_gro_source" onChange="refresh()">
 						<option value="0" selected="true">Pierre</option>
 						<option value="1">Sandy</option>
+					</select>
 				</td>
 			</tr>
 		</table>
@@ -175,7 +176,7 @@
                     <table cellspacing="2" class="subt">
                         <tr>
                             <td>Level 5 Skill:</td>
-                            <td><input type="checkbox" id="check_skillsTill" onChange="refresh()" /> Tiller<br /></td>
+                            <td><label for="check_skillsTill" class="sdv-checkbox-row"><input type="checkbox" id="check_skillsTill" onChange="refresh()" /><span>Tiller</span></label></td>
                         </tr>
                         <tr>
                             <td>Level 10 Skill:</td>
@@ -208,11 +209,11 @@
                     <table cellspacing="2" class="subt">
                         <tr>
                             <td>Level 5 skill:</td>
-                            <td><input type="checkbox" id="check_skillsGatherer" onChange="refresh()" /> Gatherer<br /></td>
+                            <td><label for="check_skillsGatherer" class="sdv-checkbox-row"><input type="checkbox" id="check_skillsGatherer" onChange="refresh()" /><span>Gatherer</span></label></td>
                         </tr>
                         <tr>
                             <td>Level 10 skill:</td>
-                            <td><input type="checkbox" id="check_skillsBotanist" onChange="refresh()" /> Botanist<br /></td>
+                            <td><label for="check_skillsBotanist" class="sdv-checkbox-row"><input type="checkbox" id="check_skillsBotanist" onChange="refresh()" /><span>Botanist</span></label></td>
                         </tr>
                     </table>
                 </td>
@@ -235,17 +236,17 @@
 
 			<tr>
 				<td>Show Extra Info:</td>
-				<td><input type="checkbox" id="check_extra" onChange="refresh()" checked="true" /></td>
+				<td><label for="check_extra" class="sdv-checkbox-row"><input type="checkbox" id="check_extra" onChange="refresh()" checked="true" /><span>Enable</span></label></td>
 			</tr>
 
 			<tr>
 				<td>Disable Crop Links:</td>
-				<td><input type="checkbox" id="disable_links" onChange="refresh()" /></td>
+				<td><label for="disable_links" class="sdv-checkbox-row"><input type="checkbox" id="disable_links" onChange="refresh()" /><span>Enable</span></label></td>
 			</tr>
 
 			<tr>
 				<td>Use Prediction Model:</td>
-				<td><input type="checkbox" id="predictionModel" onChange="refresh()" />
+				<td><label for="predictionModel" class="sdv-checkbox-row"><input type="checkbox" id="predictionModel" onChange="refresh()" /><span>Enable</span></label>
 				<button type="button" onClick="refresh()" >Recalculate</button></td>
 			</tr>
 			

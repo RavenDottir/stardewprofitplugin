@@ -272,90 +272,22 @@
    STARDEW CHECKBOX
 ========================================= */
 
-/* Checkbox label wrapper */
-.sdv-checkbox {
+.sdv-checkbox-row {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-
-  font-family: 'Stardew Valley';
+  gap: 10px;
   font-size: 22px;
   line-height: 1.2;
-
   color: #3b1e0e;
   text-shadow: none;
-
   cursor: pointer;
-  user-select: none;
 }
 
-/* Box */
-.sdv-checkbox-box {
-  width: 22px;
-  height: 22px;
-
-  background: #f3c07a;
-  border: 4px solid #8c4f21;
-  border-radius: 6px;
-
-  box-shadow:
-    0 3px 0 #5e2f12,
-    inset 0 0 0 3px #e6a85d;
-
-  position: relative;
-}
-
-/* Hover */
-.sdv-checkbox:hover .sdv-checkbox-box {
-  background: #f8d9a5;
-}
-
-/* Checked State */
-.sdv-checkbox input:checked + .sdv-checkbox-box {
-  background: #e6a85d;
-}
-
-/* Pixel Checkmark */
-.sdv-checkbox input:checked + .sdv-checkbox-box::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  top: 2px;
-  width: 6px;
-  height: 12px;
-  border-right: 4px solid #5e2f12;
-  border-bottom: 4px solid #5e2f12;
-  transform: rotate(45deg);
-}
-/* Pressed effect */
-.sdv-checkbox input:active + .sdv-checkbox-box {
-  transform: translateY(2px);
-  box-shadow:
-    0 1px 0 #5e2f12,
-    inset 0 0 0 3px #e6a85d;
-}
-/* Ensure checkbox wrappers align properly inside table cell */
-.sdv-calculator .options td label.sdv-checkbox {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-/* Consistent spacing between stacked checkboxes */
-.sdv-calculator .options td label.sdv-checkbox + label.sdv-checkbox {
-  margin-top: 8px;
-}
-/* Align single-checkbox rows visually */
-.sdv-calculator .options td:last-child:has(label.sdv-checkbox:only-child) {
-  padding-top: 6px;
-}
-.sdv-checkbox small,
-.sdv-checkbox .note {
-  font-size: 18px;
-  opacity: 0.85;
-}
-
-.sdv-checkbox .note {
-  margin-left: 6px;
+.sdv-calculator .options input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: #8c4f21;
 }
 
 /* Left label column */
@@ -371,13 +303,13 @@
   width: 52%;
 }
 /* Checkbox group spacing */
-.sdv-calculator td label.sdv-checkbox {
+.sdv-calculator td label.sdv-checkbox-row {
   display: flex;
   align-items: center;
   margin-bottom: 6px;
 }
 
-.sdv-calculator td label.sdv-checkbox:last-child {
+.sdv-calculator td label.sdv-checkbox-row:last-child {
   margin-bottom: 0;
 }
 
@@ -386,13 +318,6 @@
   padding: 8px 10px;
   border-radius: 10px;
 }
-/* Add vertical breathing before major groups */
-.sdv-calculator .options tr:has(td:first-child:contains("Seed Sources")),
-.sdv-calculator .options tr:has(td:first-child:contains("Pay For Seeds")),
-.sdv-calculator .options tr:has(td:first-child:contains("Fertilizer")) {
-  padding-top: 14px;
-}
-
 /* Improve table rhythm */
 .sdv-calculator .options td {
   padding: 8px 6px;

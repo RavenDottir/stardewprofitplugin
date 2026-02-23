@@ -34,6 +34,7 @@ var options = {
 	"foodLevel": 0,
 	"extra": false,
 	"disableLinks": false,
+	"predictionModel": false,
 	"barColors": {
 		"profit": {
 			"positive": "var(--graph-profit-positive, lime)",
