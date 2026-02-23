@@ -1890,7 +1890,17 @@ function updateData() {
 /*
  * Called once on startup to draw the UI.
  */
+function calculatorUiReady() {
+    return document.getElementById('select_season') !== null
+        && document.getElementById('predictionModel') !== null
+        && document.getElementById('check_sellRaw') !== null;
+}
+
 function initial() {
+    if (!calculatorUiReady()) {
+        return;
+    }
+
 	optionsLoad();
 	updateData();
 	renderGraph();
@@ -1900,6 +1910,10 @@ function initial() {
  * Called on every option change to animate the graph.
  */
 function refresh() {
+    if (!calculatorUiReady()) {
+        return;
+    }
+
 	updateData();
 
 	updateGraph();
@@ -2065,7 +2079,9 @@ function mergeOptions(defaults, overrides) {
 
 function deserialize(str) {
     try {
-        var json = `(${str})`
+        var sanitized = decodeURIComponent(str).replace(/[\u0000]/g, '');
+
+        var json = `(${sanitized})`
             .replace(/_/g, ' ')
             .replace(/-/g, ',')
             .replace(/\(/g, '{')
@@ -2080,7 +2096,6 @@ function deserialize(str) {
         return options;
     }
 }
-
 function serialize(obj) {
 
 	if (typeof obj !== 'object' || obj === null) {
@@ -2101,6 +2116,10 @@ function serialize(obj) {
  * Called when changing season/seeds, to redraw the graph.
  */
 function rebuild() {
+    if (!calculatorUiReady()) {
+        return;
+    }
+
 	gAxis.selectAll("*").remove();
 	gProfit.selectAll("*").remove();
 	gSeedLoss.selectAll("*").remove();
