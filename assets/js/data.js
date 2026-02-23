@@ -44,6 +44,8 @@ var options = {
 	}
 };
 
+var defaultOptions = JSON.parse(JSON.stringify(options));
+
 // Different fertilizers with their stats.
 var fertilizers = [
 	{

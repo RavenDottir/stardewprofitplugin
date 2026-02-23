@@ -1,7 +1,8 @@
 <div>
 </div>
-<div class="sdv-calculator">
+	<div class="sdv-calculator">
 		<div class="graph">
+			<div id="sdv-graph-title" class="sdv-graph-title"></div>
 		</div>
 
 		<div class="options">
@@ -22,7 +23,7 @@
 
             <tr id="cross_season_row">
                 <td>Cross-Season:</td>
-                <td><input type="checkbox" id="cross_season" onChange="refresh()" /></td>
+                <td><input type="checkbox" id="cross_season" class="sdv-checkbox" onChange="refresh()" /></td>
             </tr>
 
 			<tr id="current_day_row">
@@ -63,15 +64,15 @@
                         </tr>
                         <tr id="tr_check_sellRaw">
                             <td>No Artisan Good:</td>
-                            <td><input type="checkbox" id="check_sellRaw" onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><input type="checkbox" id="check_sellRaw" class="sdv-checkbox"  onChange="refresh()"/> Sell Raw<br /></td>
                         </tr>
                         <tr id="tr_check_sellExcess">
                             <td>Excess:</td>
-                            <td><input type="checkbox" id="check_sellExcess" onChange="refresh()"/> Sell Raw<br /></td>
+                            <td><input type="checkbox" id="check_sellExcess" class="sdv-checkbox" onChange="refresh()"/> Sell Raw<br /></td>
                         </tr>
                         <tr id="tr_check_byHarvest">
                             <td>By Harvest:</td>
-                            <td><input type="checkbox" id="check_byHarvest" onChange="refresh()"/><br /></td>
+                            <td><input type="checkbox" id="check_byHarvest" class="sdv-checkbox" onChange="refresh()"/><br /></td>
                         </tr>
                         <tr id="tr_select_aging">
                             <td>Aging:</td>
@@ -112,9 +113,9 @@
 			<tr>
 				<td>Seed Sources:</td>
 				<td>
-					<input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /> <label for="check_seedsPierre">Pierre</label><br />
-					<input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /> <label for="check_seedsJoja">Joja</label><br />
-					<input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /> <label for="check_seedsSpecial">Special</label>
+					<input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /> <label for="check_seedsPierre" class="sdv-checkbox">Pierre</label><br />
+					<input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /> <label for="check_seedsJoja" class="sdv-checkbox" >Joja</label><br />
+					<input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /> <label for="check_seedsSpecial" class="sdv-checkbox" >Special</label>
 				</td>
 			</tr>
 
