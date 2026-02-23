@@ -2079,7 +2079,9 @@ function mergeOptions(defaults, overrides) {
 
 function deserialize(str) {
     try {
-        var json = `(${str})`
+        var sanitized = decodeURIComponent(str).replace(/[\u0000]/g, '');
+
+        var json = `(${sanitized})`
             .replace(/_/g, ' ')
             .replace(/-/g, ',')
             .replace(/\(/g, '{')
@@ -2094,7 +2096,6 @@ function deserialize(str) {
         return options;
     }
 }
-
 function serialize(obj) {
 
 	if (typeof obj !== 'object' || obj === null) {

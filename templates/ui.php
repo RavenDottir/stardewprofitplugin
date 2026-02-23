@@ -113,6 +113,8 @@
 			<tr>
 				<td>Seed Sources:</td>
 				<td>
+					<label for="check_seedsPierre" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /><span>Pierre</span></label>
+					<label for="check_seedsJoja" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /><span>Joja</span></label>
 					<label for="check_seedsPierre" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsPierre" onChange="rebuild()" checked="true" /><span>Pierre</span></label><br />
 					<label for="check_seedsJoja" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsJoja" onChange="rebuild()" checked="true" /><span>Joja</span></label><br />
 					<label for="check_seedsSpecial" class="sdv-checkbox-row"><input type="checkbox" id="check_seedsSpecial" onChange="rebuild()" checked="true" /><span>Special</span></label>
